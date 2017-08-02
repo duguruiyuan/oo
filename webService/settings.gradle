@@ -1,0 +1,1 @@
+include "slcf-shared", "slcf-web", "slcf-service", "slcf-dal"

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"  xmlns:c='http://www.springframework.org/schema/c'
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:cache="http://www.springframework.org/schema/cache"
+	xsi:schemaLocation="  
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+	 <cache:annotation-driven cache-manager="cacheManager"/>
+	 
+	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+	</bean>
+	
+	<bean id="classpathResource" class="org.springframework.core.io.ClassPathResource">
+		<constructor-arg  value="scripts/cas.lua" />
+	</bean> 
+	
+	<bean id="scriptSource" class="org.springframework.scripting.support.ResourceScriptSource">
+		<constructor-arg ref="classpathResource" />
+	</bean>
+	
+	<bean id="script" class="org.springframework.data.redis.core.script.DefaultRedisScript">
+		<property name="scriptSource" ref="scriptSource"></property>
+		<property name="resultType" value="java.lang.Boolean" />
+	</bean>
+
+	<bean id="connectionFactory"
+		class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		p:host-name="192.16.150.103" p:port="6379" p:password=""
+		p:pool-config-ref="poolConfig" />
+
+	<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+	</bean>
+
+<!-- 	<bean id="messageListenerAdapter"
+		class="org.springframework.data.redis.listener.adapter.MessageListenerAdapter">
+		<constructor-arg>
+			<ref bean="investService" />
+		</constructor-arg>
+		<constructor-arg value="receive"/>
+	</bean>
+ -->
+	<bean id="redisMessageListenerContainer"
+		class="org.springframework.data.redis.listener.RedisMessageListenerContainer">
+		<property name="connectionFactory" ref="connectionFactory"></property>
+	</bean>
+	 
+   <bean id="cacheManager" name="redis" class="org.springframework.data.redis.cache.RedisCacheManager" c:template-ref="redisTemplate" p:usePrefix="true">
+    <property name="expires">
+        <map>
+            <entry key="afficheCount" value="3600"/>                    
+        </map>
+    </property>
+</bean>
+   
+   <bean id="keyGenerator" class="org.springframework.cache.interceptor.SimpleKeyGenerator" />
+   <bean id="cacheResolver" class="org.springframework.cache.interceptor.SimpleCacheResolver">
+   		<constructor-arg>
+			<ref bean="cacheManager"/>
+		</constructor-arg>
+   </bean>
+</beans> 

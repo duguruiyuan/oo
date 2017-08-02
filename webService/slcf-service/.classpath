@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry excluding="email.properties" kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7" exported="true"/>
+	<classpathentry kind="src" path="/slcf-dal" exported="true"/>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.slfinance/foundation_core/1.0.1/ecd894c3a845512ff6585cc70f5c27654dc446a5/foundation_core-1.0.1-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.slfinance/foundation_core/1.0.1/437dfdddecac298dc0eafb41fab5cbae52d0a3fc/foundation_core-1.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/7ca0efbeb87ca845b5d7a0ac9c21a4b7b95f7b28/guava-17.0-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/17.0/9c6ef172e8de35fd8d4d8783e4821e57cdef7445/guava-17.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.14.8/ae5d70b49f5522a5c63abee50d9e9ad7a1cfce4e/lombok-1.14.8-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.14.8/8ac073941721e0b521ec8e8bad088b1e7b8cd332/lombok-1.14.8.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.5/2bd5124dfb9198af70cad30eb9ccbfa9cd670163/joda-time-2.5-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/joda-time/joda-time/2.5/c73038a3688525aad5cf33409df483178290cd64/joda-time-2.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.2/53746de93a0b30f346c082074a40c01a6cebdfa7/commons-beanutils-1.9.2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-beanutils/commons-beanutils/1.9.2/7a87d845ad3a155297e8f67d9008f4c1e5656b71/commons-beanutils-1.9.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.5/d59903629d92bdfbca3e691ca11cf49b2c490173/fastjson-1.2.5-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.alibaba/fastjson/1.2.5/9f675e9a1b2bf1224183005752a9214226e8aa8e/fastjson-1.2.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Projects/jar/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.slfinance/thirdPP-client/1.0.3/20a4ae024d9b3111dba13f44a3be6b6860e1f0cd/thirdPP-client-1.0.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.4.2.RELEASE/625f9a3b451824f17384ee06f4b25181fac3a76e/spring-data-redis-1.4.2.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.data/spring-data-redis/1.4.2.RELEASE/9756805b6e56e820067304c3156b434334ed7f46/spring-data-redis-1.4.2.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-rabbit/1.4.3.RELEASE/92995547bf3bd51a45e6d4aae0f4d18e19c69ffe/spring-rabbit-1.4.3.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-rabbit/1.4.3.RELEASE/26e1d7f7ba8ae89ad3cda6a60a1ccf99eba35d92/spring-rabbit-1.4.3.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.2/96d156244c8caca49b6db147c66e4d8ed6b244f2/commons-pool2-2.2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-pool2/2.2/bd1a6e384f3cf0f9b9a60e1e6c1c1ecbbee7e0b7/commons-pool2-2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/redis.clients/jedis/2.5.2/a293252183cb3d5d9d55af8a0f4aa0abd18bd2c2/jedis-2.5.2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/redis.clients/jedis/2.5.2/83d833f48052456f197ba55ef2a82fc4909880b/jedis-2.5.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Projects/jar/commons-fileupload/commons-fileupload/1.3/commons-fileupload-1.3.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi/3.11-beta2/cd48c333d94185671ba3f6c71f555033679a1c3/poi-3.11-beta2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi/3.11-beta2/5b89faba0fd879a6a7eca16e81a47a2fd008738a/poi-3.11-beta2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/3.11-beta2/5ce12b60d95a2b86a2ec7bd0dbe67423dfd8a39a/poi-ooxml-3.11-beta2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml/3.11-beta2/6ea3924178a334b5298aede99bca3feaae8765bf/poi-ooxml-3.11-beta2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-scratchpad/3.11-beta2/56ae92f6f292b2428b564cf218f6419aec37abc/poi-scratchpad-3.11-beta2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-scratchpad/3.11-beta2/77a69b5418faeeb22ad5645708711ebc59c13254/poi-scratchpad-3.11-beta2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.xmlbeans/xmlbeans/2.6.0/29e80d2dd51f9dcdef8f9ffaee0d4dc1c9bbfc87/xmlbeans-2.6.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4.5/98d67d8444a044109dcbb4ae4690022b5be1de44/mail-1.4.5-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/javax.mail/mail/1.4.5/85319c87280f30e1afc54c355f91f44741beac49/mail-1.4.5.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/fa095ef874374e5b2a11f8b06c26a5d68c7cb3a4/commons-collections-3.2.1-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-collections/commons-collections/3.2.1/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-3.2.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.1.6.RELEASE/90d95c820dabd0187ff5be4a854b912741e8fd36/spring-context-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/4.1.6.RELEASE/15f0b22bf89ed468badbc4eec759af2b916d33e4/spring-context-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/4.1.6.RELEASE/7f34617a82778c608c221d7747775ec1c7c56299/spring-context-support-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context-support/4.1.6.RELEASE/9beaafd3f01cd377e36a2b1a9aed7c2c87111165/spring-context-support-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.1.6.RELEASE/b27f6ddfa82527ab2be92b11d3e1c50b6e7993e9/spring-aop-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/4.1.6.RELEASE/686c13ba57d9423dede9c5d580dcadc5c67a2761/spring-aop-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.1.6.RELEASE/b415e1ace63a04dda23b2e7431678f726d6032ca/spring-tx-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/4.1.6.RELEASE/b5beecfa930e0e2ce6fb3999eee3f69c4776e6be/spring-tx-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.rabbitmq/amqp-client/3.4.2/b5494395b949776f97985f6948d4b2399f6f816d/amqp-client-3.4.2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/com.rabbitmq/amqp-client/3.4.2/e3c6ec521a1906ed5403bf64c7903762ea2d0984/amqp-client-3.4.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-amqp/1.4.3.RELEASE/570295eb455b47b3ce6d107cbff1108bafe065d0/spring-amqp-1.4.3.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.amqp/spring-amqp/1.4.3.RELEASE/b45d3a7bd2403655d212a5cb3422728bd7afb049/spring-amqp-1.4.3.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.retry/spring-retry/1.1.2.RELEASE/2bbd6864191cd3966cc569055dc48a52bc5fbd68/spring-retry-1.1.2.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework.retry/spring-retry/1.1.2.RELEASE/949a23beb82ebe31d7a1d47022353b8338c4da11/spring-retry-1.1.2.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Projects/jar/commons-io/commons-io/2.2/commons-io-2.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/3f15fff45d57656685abfee9e8302bf14580044c/commons-codec-1.9-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-codec/commons-codec/1.9/9ce04e34240f674bc72680f8b843b1457383161a/commons-codec-1.9.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.apache.poi/poi-ooxml-schemas/3.11-beta2/76e88385937608ef805a040b35185220e5d95ea1/poi-ooxml-schemas-3.11-beta2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Projects/jar/stax/stax-api/1.0.1/stax-api-1.0.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/3697e9f67a2ed7ac5f589cff30f21173299440/activation-1.1-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/javax.activation/activation/1.1/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Projects/jar/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/4.1.6.RELEASE/2c44b3b58eefa41b147cad993f42aa601e445da0/spring-messaging-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-messaging/4.1.6.RELEASE/d39238370be17d8435069492a1cb0471e5be7e67/spring-messaging-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/58697792617f38bf86d8e26bc004aac505e516a9/slf4j-api-1.7.12-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.12/8e20852d05222dc286bf1c71d78d0531e177c317/slf4j-api-1.7.12.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.1.6.RELEASE/708d354f5210f253d345b3cb65013410cc770554/spring-beans-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/4.1.6.RELEASE/ce2d409d470948f11fad41ffdf37dcff4d28cd7c/spring-beans-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.1.6.RELEASE/a09f8d7c0c2b861f0d9e256de451c78b55aec0cf/spring-core-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/4.1.6.RELEASE/e2f486124d5dea2d91a9c2ea7d4456bc343ca2cc/spring-core-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.1.6.RELEASE/ee7d75b5f8328cb46f965fd4f07b12691bedea6a/spring-expression-4.1.6.RELEASE-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/4.1.6.RELEASE/8bf70887c2c883a6f6e552dbe46eec35c07adf6a/spring-expression-4.1.6.RELEASE.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" kind="lib" path="C:/Users/zhiwen_feng/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar" exported="true">
+		<attributes>
+			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
+		</attributes>
+	</classpathentry>
+</classpath>

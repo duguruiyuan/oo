@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
+<title>后台定时任务说明</title>
+<style>
+    ul.timeline {
+        list-style-type: none;
+        background: url("static/img/version_line.png") repeat-y scroll 120px 0 transparent;
+        margin: 50px 0;
+        padding: 0;
+    }
+ 
+    ul.timeline li {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    ul.timeline li .time {
+        position: absolute;
+        width: 90px;
+        text-align: right;
+        left: 0;
+        top: 10px;
+        color: #999;
+    }
+    ul.timeline li .version {
+        position: absolute;
+        width: 290px;
+        text-align: right;
+        left: -200px;
+        top: 30px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #3594cb;
+        overflow: hidden;
+    }
+    ul.timeline li .number {
+        position: absolute;
+        background: url("static/img/version_dot.png") no-repeat scroll 0 0 transparent;
+        width: 56px;
+        height: 56px;
+        left: 97px;
+        line-height: 56px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+    }
+    ul.timeline li.alt .number {
+        background-image: url("static/img/version_dot_alt.png");
+    }
+    ul.timeline li .content {
+        margin-left: 180px;
+        
+    }
+    ul.timeline li .content pre {
+        background-color: #3594cb;
+        padding: 20px;
+        color: #fff;
+        font-size: 13px;
+        line-height: 60px;
+    }
+    ul.timeline li.alt .content pre {
+        background-color: #43B1F1;
+    }
+    
+    .container {
+		    margin-right: 200px;
+		    margin-left: 200px;
+		    *zoom: 1;
+		}
+</style>
+</head>
+<body class="container">
+
+    <div id="ttt">
+    	
+    </div>
+
+</body>
+<script>
+	  /*
+    $(function() {
+    
+        var nextDataNumber = 5;
+        
+        var ulNode = $('ul.timeline');
+        
+        function initLiNodes() {
+            var liNodes = ulNode.find('li'), count = liNodes.length, i, liNode, leftCount = nextDataNumber * 20;
+            for(i=0; i<count; i++) {
+                liNode = $(liNodes.get(i));
+                if(i % 2 !== 0) {
+                    liNode.addClass('alt');
+                } else {
+                    liNode.removeClass('alt');
+                }
+                liNode.find('.number').text(leftCount + count - i);
+            }
+        }
+        
+        
+        $('#fetchNextData').click(function() {
+            var $this = $(this);
+            $this.addClass('disabled').text('......');
+            
+            $.get('./version_data_' + nextDataNumber +'.txt', function(data) {
+                ulNode.append(data);
+                $this.removeClass('disabled').text('���ʮ�����');
+                nextDataNumber--;
+                
+                if(nextDataNumber === 0) {
+                    $this.hide();
+                }
+                
+                initLiNodes();
+            });
+            
+        });
+    
+        initLiNodes();
+        
+    }); */
+</script>
+<script>
+	
+	var by = function(name){
+	    return function(o, p){
+	        var a, b;
+	        if(typeof o === "object"
+					&& typeof p === "object"
+		      && o && p) {
+	            a = o[name];
+	            b = p[name];
+	            if(a === b) {
+	                return 0;
+	            }
+	
+	            if(typeof a === typeof b) {
+	                return a < b ? -1 : 1;
+	            }
+	            
+	            return typeof a < typeof b ? -1 : 1;
+	        }
+	        else
+					{
+	            throw ("error");
+	
+	        }
+	    }
+	};
+	
+	function createNode(data, begin, end, name, value, desc, color) {
+		for(var i = begin; i <= end; i++) {
+			 var obj = {};
+			 obj.name = "<span style=\"color: "+(color==undefined?"#3594cb":color)+";\">" + name + "</span>";
+			 obj.value= i + value;
+			 obj.desc = "        -" + name + ":" + desc;
+			 obj.color = color;
+			 obj.sort = (i < 10 ? "0":"") + i + value;
+			 
+			 // 若时间重复则合并
+			 var isFound = false;
+			 for(var j = 0; j < data.length; j ++) {
+			 	   if(data[j].sort == obj.sort) {
+			 	      data[j].name += "<br>" + obj.name;
+			 	      data[j].desc += "<br>" + obj.desc;
+			 	      isFound = true;
+			 	      break;
+			 	  }
+			 }
+			 if(!isFound) {
+			 	 data.push(obj);
+			 }
+		}
+	}
+	
+	var body = "";
+	
+	var data = [];
+	
+	// 企业借款
+	createNode(data, 8, 23, "企业借款发布", ":00", "企业借款每天8-23点每个整点都会发布。系统自动将符合条件的项目(即待发布状态)进行发布，发布规则为同一期限的项目仅能发布一个。", "blue");
+	createNode(data, 8, 23, "企业借款发布", ":30", "企业借款每天8-23点每个半点都会发布。系统自动将符合条件的项目(即待发布状态)进行发布，发布规则为同一期限的项目仅能发布一个。", "blue");
+	createNode(data, 1, 1, "企业借款生效", ":00", "企业借款每天1点和17点会生效一次。系统自动将符合条件的项目（即满标复核状态且生效日为当天）进行生效。","green");
+	createNode(data, 17, 17, "企业借款生效", ":00", "企业借款每天1点和17点会生效一次。系统自动将符合条件的项目（即满标复核状态且生效日为当天）进行生效。","green");
+	createNode(data, 20, 20, "企业借款流标", ":10", "企业借款在每晚20：10会流标。系统自动将符合条件的项目（即状态为发布中或待发布且当前日期大于生效日）进行流标。", "red");
+	createNode(data, 0, 0, "企业借款贴息", ":30", "企业借款在每天凌晨0:30会贴息。贴息指在项目发布后用户投资即产生收益，在项目生效前每日给用户贴息，贴息的金额直接打到用户账户，由公司收益账户支出。", "orange");
+	createNode(data, 8, 22, "企业借款还款", ":00", "企业借款在每天8-22点每个整点都会还款。系统自动取符合条件的项目（即还款计划待还款状态且还款日等于当天）进行还款。还款分为正常还款和逾期还款，优先进行逾期还款。", "#FF83FA");
+	createNode(data, 22, 22, "企业借款风险金垫付", ":30", "企业借款在每天22:30垫付。系统自动取符合条件的项目（即还款计划待还款状态且还款日等于当天且未垫付）进行风险金垫付。本任务还会将项目变为逾期状态。", "#8E388E");
+	createNode(data, 23, 23, "企业借款审核拒绝", ":30", "企业借款在每天23:30审核拒绝。系统自动将过了发布时间且项目状态仍为待审核的项目改为拒绝状态。", "#A52A2A");
+	
+	// 优选计划
+	createNode(data, 8, 23, "优选计划发布", ":00", "优选计划每天8-23点每个整点都会发布。系统自动将符合条件的项目(即待发布状态且发布时间为当天)进行发布，发布规则同一类型的计划只能发布一个。", "blue");
+	createNode(data, 8, 23, "优选计划发布", ":30", "优选计划每天8-23点每个半点都会发布。系统自动将符合条件的项目(即待发布状态且发布时间为当天)进行发布，发布规则同一类型的计划只能发布一个。", "blue");
+	createNode(data, 8, 23, "优选计划生效", ":00", "优选计划每天8-23点每个整点都会生效。系统自动将符合条件的项目（即发布中或满标复核状态且生效日为当天）进行生效。非满标复核状态的计划需在23之后才允许生效。","green");
+	createNode(data, 8, 23, "优选计划撮合", ":10", "优选计划每天8-23点每个10分都会撮合。将投资人已投资的金额大于0.1元以上的进行债权撮合，撮合的债权按照指定规则进行筛选。具体撮合细节请查看流程图。","orange");
+	createNode(data, 23, 23, "优选计划流标", ":00", "优选计划在每晚23：00会流标。系统自动将符合条件的项目（即状态为待审核、待发布、发布中(未投资)且当前日期大于生效日）进行流标。", "red");
+	createNode(data, 1, 1, "优选计划返息", ":00", "优选计划在每天凌晨1:00会返息。系统按照规定时间进行返息，将投资人持有的债权进行转让居间人的方式进行返息。返息包含多种情况，请参考流程图详细了解。", "#8E388E");
+	createNode(data, 3, 3, "优选计划赎回", ":00", "优选计划在每天凌晨3:00会赎回。系统按照规定时间进行赎回，将投资人持有的债权进行转让居间人的方式进行赎回。系统在赎回时一并给奖励收益。", "#A52A2A");
+	createNode(data, 22, 22, "企业借款还款", ":00", "优选计划在每天22点都会还款。系统在指定时间将到期的债权进行还款给投资人，投资人持有的这部分价值将继续撮合变为持有的债权。", "#FF83FA");
+	
+	// 业绩报表
+	createNode(data, 1, 1, "业务报表", ":00", "生成业务员业务报表，统计业务员上个月的业绩情况，每月1号凌晨1点跑一次。业绩统计包含企业借款和优先计划两部分。", "#F08080");
+	createNode(data, 1, 1, "花名册处理", ":00", "根据导入的花名册生成组织架构，每次导入花名册均为全量导入，但会保留历史记录以备查询。", "#FFD700");
+	createNode(data, 4, 4, "线下客户转为线上客户", ":00", "自动根据客户经理信息将线下客户经理的客户关系转移到线上。该功能主要是为了同步线下系统的信息，后期线下系统废除后，该功能不会再使用。", "#8A8A8A");
+	createNode(data, 4, 4, "同步线下理财系统", ":00", "系统从线下理财系统增量同步客户信息和投资信息至本系统，以方便用户查询历史投资信息（在线下理财系统的投资信息）。", "#8A8A8A");
+	
+	// 其他
+	createNode(data, 22, 22, "补全银行卡协议号", ":00", "补全银行卡协议号信息，从连连支付同步协议号和银行名称。", "#0000FF");
+	createNode(data, 24, 24, "债权价值计算", ":00", "债权价值计算每15分钟执行一次，主要用于将新导入的债权计算出放款日到生效日所有的价值，以方便统计用户当时持有的价值。", "#00EE00");
+	createNode(data, 24, 24, "线下审核数据监控", ":00", "线下充值和附属银行卡有待审核的数据时发送邮件，每5分钟跑一次。", "#080808");
+	createNode(data, 24, 24, "POS单据监控", ":00", "监控同一个POS单线上线下同时使用，每5分钟跑一次。", "#3CB371");
+	createNode(data, 1, 1, "业务员离职", ":00", "每天凌晨1点标记业务员已离职，此处标记用途是使离职的业务员无法登陆我们系统。登录善林大师时会判断该标识是否允许登录。", "#63B8FF");
+	createNode(data, 24, 24, "添加业务员", ":00", "自动将系统中用户转为业务员，每1个小时跑一次。系统自动将本系统用户数据同人事系统做对比，将同身份证号且为理财师的用户标记为业务员。", "#7B68EE");
+	createNode(data, 17, 17, "解除业务员", ":00", "自动将已离职的业务员解除业务员关系，每月1号下午17点跑一次。系统自动将本系统用户数据同人事系统做对比，将人事系统已离职且在本系统是业务员的用户做解除业务员关系。", "#8B1A1A");
+	
+	data.sort(by("sort"));
+	
+	body += "<ul class=\"timeline\">";
+	for(var i = 0; i < data.length; i ++) {
+		body += "<li>";
+	    body += "<div class=\"time\"></div>";
+	    body += "<div class=\"version\">"+data[i].name+"</div>";
+	    body += "<div class=\"number\">"+data[i].value+"</div>";
+	    body += "<div class=\"content\">";
+	    body += "        <pre>";
+	    body += (data[i].desc == undefined ? "" : data[i].desc);
+	    body += "        </pre>";
+	    body += "    </div>";
+	    body += "</li>";
+	}
+	body += "</ul>";
+  
+	console.log(body);
+	document.getElementById("ttt").innerHTML=body;
+	
+</script>

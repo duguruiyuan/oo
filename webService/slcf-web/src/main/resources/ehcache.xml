@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+ xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" 
+ updateCheck="false"  name="hibernateCache">
+
+	<diskStore path="java.io.tmpdir/ehcache/slcf" />
+	<!-- DefaultCache setting. -->
+	<defaultCache maxElementsInMemory="1000" eternal="false"
+		timeToIdleSeconds="3000" timeToLiveSeconds="6000" overflowToDisk="false"
+		 maxElementsOnDisk="100000" />
+	<!-- Special objects setting. -->
+	<cache name="cache1" maxElementsInMemory="1000" eternal="false" overflowToDisk="false" 
+		maxElementsOnDisk="1500" timeToIdleSeconds="300" timeToLiveSeconds="600" />
+</ehcache>

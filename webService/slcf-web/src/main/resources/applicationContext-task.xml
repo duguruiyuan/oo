@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+	<task:scheduler id="slcf-task" pool-size="50" />
+  	<task:scheduled-tasks scheduler="slcf-task">
+
+		<!-- 还款定时任务 -->
+<!-- 		<task:scheduled ref="repaymentJob" method="invoke" cron="0 0 22 * * ?" /> -->
+		
+		<!-- 关闭投标定时任务 -->
+<!-- 		<task:scheduled ref="closeJob" method="invoke" cron="0 30 23 * * ?" /> -->
+
+		<!-- 结息定时任务 -->
+<!-- 		<task:scheduled ref="dailySettlementJob" method="invoke" cron="0 0 01 * * ?" /> -->
+
+		<!-- 体验宝结息定时任务 -->
+<!-- 		<task:scheduled ref="experienceDailySettlementJob" method="invoke" cron="0 0 01 * * ?" /> -->
+
+		<!-- 体验宝到期赎回定时任务 -->
+<!-- 		<task:scheduled ref="experienceWithdrawJob" method="invoke" cron="0 0 03 * * ?" /> -->
+		
+		<!-- 债权价值计算定时任务 -->
+ 		<task:scheduled ref="computeLoanPvJob" method="invoke" cron="0 */15 * * * ?" /> 
+
+		<!-- 可开放价值计算定时任务 -->
+<!-- 		<task:scheduled ref="computeOpenValueJob" method="invoke" cron="0 30 07-22 * * ?" /> -->
+
+		<!-- 发标定时任务 -->
+<!-- 		<task:scheduled ref="openJob" method="invoke" cron="0 0 08-23 * * ?" /> -->
+		
+		<!-- 定时对外通知 -->
+  		<task:scheduled ref="openServiceNotifyJob" method="invoke" cron="0 */5 * * * ?" /> 
+  		
+  		
+		
+		<!-- 定时发送体验宝赎回短信 -->
+<!-- 		<task:scheduled ref="experienceWithdrawSendSmsJob" method="invoke" cron="0 0 09 * * ?" />  -->
+ 
+ 		<!-- 补银行卡信息定时任务 -->
+		<task:scheduled ref="mendBankJob" method="invoke" cron="0 0 20 * * ?" />
+		
+	    <!-- 每日还款数据发送邮件定时任务 每天的早上八点发送 -->
+<!-- 		<task:scheduled ref="financialStatisticsJob" method="invoke" cron="0 0 08 * * ?" /> -->
+ 
+ 		<!-- 定期宝结息 -->
+<!-- 		<task:scheduled ref="termDailySettlementJob" method="invoke" cron="0 0 03 * * ?" /> -->
+		
+		<!-- 定期宝到期赎回 -->
+<!-- 		<task:scheduled ref="termAtoneWithdrawJob" method="invoke" cron="0 0 05 * * ?" /> -->
+ 
+		<!-- 定期宝公司回购 -->
+<!-- 		<task:scheduled ref="termAtoneBuyJob" method="invoke" cron="0 0 04 * * ?" /> -->
+		
+		<!-- 定期宝赎回到帐 -->
+<!-- 		<task:scheduled ref="termAtoneSettlementJob" method="invoke" cron="0 0 07,11,15,19 * * ?" /> -->
+
+		<!-- 金牌推荐人每日结息 -->
+<!--  		<task:scheduled ref="goldDailySettlementJob" method="invoke" cron="0 0 01 * * ?" />  -->
+		
+		<!-- 金牌推荐人到期处理 -->
+<!--  		<task:scheduled ref="goldWithdrawJob" method="invoke" cron="0 0 02 15 * ?" />  -->
+ 		
+		<!-- 数据汇总任务 -->
+<!-- 		<task:scheduled ref="summarizationBusinessHistoryJob" method="invoke" cron="0 0 * * * ?" /> -->
+		
+		<!-- 活期宝价值回收任务 -->
+<!--  		<task:scheduled ref="recoverAtoneJob" method="invoke" cron="0 45 23 * * ?" /> --> 	
+ 							
+ 		<!-- 企业借款发布定时任务 -->
+		<task:scheduled ref="projectPublishJob" method="invoke" cron="0 0,30 08-23 * * ?" />
+		
+		<!-- 企业借款生效定时任务 -->
+		<task:scheduled ref="projectReleaseJob" method="invoke" cron="0 0 01,17 * * ?" />
+		
+		<!-- 企业借款流标定时任务 -->
+		<task:scheduled ref="projectUnReleaseJob" method="invoke" cron="0 10 20 * * ?" />
+		
+		<!-- 企业借款贴息定时任务 -->
+		<task:scheduled ref="projectCompensateJob" method="invoke" cron="0 30 0 * * ?" />	
+		
+		<!-- 企业借款还款定时任务 -->
+		<task:scheduled ref="projectRepaymentJob" method="invoke" cron="0 0 08-22 * * ?" />
+		
+		<!-- 企业借款风险金垫付定时任务 -->
+		<task:scheduled ref="projectRiskRepaymentJob" method="invoke" cron="0 30 22 * * ?" />	
+		
+		<!-- 企业借款审核拒绝定时任务 -->
+		<task:scheduled ref="projectAuditRefuseJob" method="invoke" cron="0 30 23 * * ?" />		
+		
+		<!-- 优选计划发布定时任务 -->
+		<task:scheduled ref="wealthPublishJob" method="invoke" cron="0 0,30 08-23 * * ?"/>	
+		
+		<!-- 优选计划生效定时任务 -->
+		<task:scheduled ref="wealthReleaseJob" method="invoke" cron="0 0 08-23 * * ?"/>		
+		
+		<!-- 优选计划撮合定时任务 -->
+		<task:scheduled ref="wealthMatchLoanJob" method="invoke" cron="0 10 08-23 * * ?"/>	
+		
+		<!-- 优选计划流标定时任务 -->
+		<task:scheduled ref="wealthUnReleaseJob" method="invoke" cron="0 0 23 * * ?"/>	
+		
+		<!-- 优选计划返息定时任务 -->
+		<task:scheduled ref="wealthRecoveryJob" method="invoke" cron="0 0 1 * * ?"/>	
+		
+		<!-- 优选计划赎回定时任务 -->
+		<task:scheduled ref="wealthAtoneJob" method="invoke" cron="0 0 3 * * ?"/>	
+		
+		<!-- 优选计划还款定时任务 -->
+		<task:scheduled ref="wealthRepaymentJob" method="invoke" cron="0 0 22 * * ?"/>	
+		
+		<!-- 业务员业务报表定时任务 -->
+		<task:scheduled ref="goldDailySettlementJob" method="invoke" cron="0 0 01 * * ?"/>	
+		
+		<!-- 定时处理原始数据定时任务 -->
+		<!-- <task:scheduled ref="employeeLoadHandleJob" method="invoke" cron="0 0 01 * * ?"/>	 -->
+
+		<!-- 定时处理线下数据任务 -->
+		<!-- <task:scheduled ref="offLineTransferToSLFinanceJob" method="invoke" cron="0 0 0 * * ?"/> -->	
+		
+		<!-- 定时处理线下充值、附属银行卡，有待审核的数据 -->
+		<!-- <task:scheduled ref="waitingAuditSendMessageJob" method="invoke" cron="0 0/5 * * * ?"/>	 -->
+		
+		<!-- 优选项目还款定时任务 -->
+		<task:scheduled ref="loanRepaymentJob" method="invoke" cron="0 0 08-22 * * ?" />
+		
+		<!-- 优选项目流标定时任务 -->
+		<task:scheduled ref="loanUnReleaseJob" method="invoke" cron="0 0 0-23 * * ?" />
+		
+		<!-- 计算佣金任务 -->
+		<task:scheduled ref="goldCommisionJob" method="invoke" cron="0 30 0-23 * * ?" />
+		
+		<!-- 佣金到期处理任务 -->
+		<task:scheduled ref="goldWithdrawJob" method="invoke" cron="0 0 1 * * ?" />
+		
+		<!-- 优选项目放款 -->
+		<task:scheduled ref="loanGrantJob" method="invoke" cron="0 0 0-23 * * ?"/>
+		
+		<!-- 意真优选项目放款 -->
+		<task:scheduled ref="loanGrantYZJob" method="invoke" cron="0 0/2 * * * ?"/>
+		
+		<!-- 巨涟优选项目放款 -->
+		<task:scheduled ref="loanGrantJLJob" method="invoke" cron="0 0/2 * * * ?"/>
+		
+		<!-- 财富现金贷优选项目放款 -->
+		<task:scheduled ref="loanGrantCFJob" method="invoke" cron="0 0/2 * * * ?"/>
+		
+		<!-- 优选项目放款确认 -->
+		<task:scheduled ref="loanGrantConfirmJob" method="invoke" cron="0 30 0-23 * * ?"/>
+		
+		<!-- 意真优选项目放款确认 -->
+		<task:scheduled ref="loanGrantConfirmYZJob" method="invoke" cron="0 0/3 * * * ?"/> 
+		
+		<!-- 巨涟优选项目放款确认 -->
+		<task:scheduled ref="loanGrantConfirmJLJob" method="invoke" cron="0 0/3 * * * ?"/>	
+		
+		<!-- 财富现金贷优选项目放款确认 -->
+		<task:scheduled ref="loanGrantConfirmCFJob" method="invoke" cron="0 0/3 * * * ?"/>		
+		
+		<!-- 优选项目撤销转让 -->
+		<task:scheduled ref="loanCancelJob" method="invoke" cron="0 0 0-23 * * ?"/>	
+		
+		<!-- 意真、拿米借款项目自动审核通过、发布 -->
+		<task:scheduled ref="loanAuditJob" method="invoke" cron="0 0/2 * * * ?"/>	
+		
+		<!-- 巨涟  借款项目自动审核发布-->
+		<task:scheduled ref="loanAuditJLJRJob" method="invoke" cron="0 0/2 * * * ?"/>
+		
+		<!-- 拿米  借款项目自动审核发布-->
+		<task:scheduled ref="loanAuditNMJRJob" method="invoke" cron="0 0/2 * * * ?"/>	
+		
+		<!-- 财富现金贷  借款项目自动审核发布-->
+		<task:scheduled ref="loanAuditCFJob" method="invoke" cron="0 0/2 * * * ?"/>	
+		
+		<!-- 优选项目定时发布 -->
+		<task:scheduled ref="loanPublishJob" method="invoke" cron="0 0/10 * * * ?"/>	
+		
+		<!-- 邮件发送平台每日数据汇总 -->
+		<task:scheduled ref="dailyDataSummaryJob" method="invoke" cron="0 0 17 * * ?"/>	
+		
+		<!-- 邮件发送平台每日推送数据汇总 -->
+		<task:scheduled ref="dailyPushDataSummaryJob" method="invoke" cron="0 0 1 * * ?"/>	
+		
+		<!-- 邮件意真发送放款列表数据汇总-->
+		<task:scheduled ref="dailyDataSummaryYZJob" method="invoke" cron="0 0 1 * * ?"/>	  
+		
+		<!-- 优选项目自动债权转让 -->
+		<task:scheduled ref="autoTransferJob" method="invoke" cron="0 0 0 * * ?" />
+		
+		<!-- 发送手动还款请求 -->
+		<task:scheduled ref="sendRepaymentJob" method="invoke" cron="0 30 17 * * ?" />
+		
+		<!-- 每日统计平台数据 -->
+		<task:scheduled ref="platformDataStatisticsDayJob" method="invoke" cron="1 0 0 * * ?" />
+		
+		<!-- 每月统计平台数据 -->
+		<task:scheduled ref="platformDataStatisticsMonthJob" method="invoke" cron="10 0 0 1 * ?" />
+		
+		<!-- 六月市场部活动 （2017）过期可作废-->
+		<task:scheduled ref="activityId13Job" method="invoke" cron="0 0 0-23 * 6,7 ?" />
+		<!--定时预约投标撤销 -->
+		<task:scheduled ref="autoReserveInvestJob" method="invoke" cron="0 0 0-23 * * ?" />
+		
+		<!-- 每天更新过期红包状态 -->
+		<task:scheduled ref="autoExpireJob" method="invoke" cron="3 0 0 * * ?" />
+
+		<!--红包账户流水任务-->
+		<task:scheduled ref="redEnvelopeFlowJob" method="invoke" cron="0 */5 * * * ?" />
+
+		<!--体验金定时任务-->
+		<task:scheduled ref="expLoanJob" method="invoke" cron="59 59 23 * * ?" />
+		
+		<!--授权申请定时任务-->
+		<!-- <task:scheduled ref="accreditRequestJob" method="invoke" cron="0 */5 * * * ?" /> -->
+
+		<!--正常扣款定时任务-->
+		<!-- <task:scheduled ref="withHoldingJob" method="invoke" cron="0 0 22 * * ?" /> -->
+
+		<!--代扣结果查询定时任务-->
+		<!-- <task:scheduled ref="autoQueryWithHoldResultJob" method="invoke" cron="0 */10 * * * ?" /> -->
+		
+		<!-- 代扣定时通知 -->
+  		<!-- <task:scheduled ref="withHoldingNotifyJob" method="invoke" cron="0 */1 * * * ?" />   -->
+
+	</task:scheduled-tasks>
+	
+	<bean id="applicationStartup" class="com.slfinance.shanlincaifu.ApplicationStartup"></bean>		
+</beans>

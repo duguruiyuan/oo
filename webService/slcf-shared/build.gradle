@@ -1,0 +1,59 @@
+description = '善林财富线上共享项目'
+
+ext {
+	myBatisVersion = '3.2.3'
+	springMybatisVersion = '1.2.2'
+	oracleVersion = '11.2.0.3.0'
+	tomcatJDBCVersion= '7.0.42'
+	dbunitVersion = '2.4.8'
+	h2Version = '1.4.181'
+	springVersion = '4.1.6.RELEASE'
+	junitVersion = '4.12'
+	aspectjVersion = '1.8.5'
+}
+
+dependencies { 
+	compile ("org.springframework:spring-orm:$springVersion")
+	compile "org.hibernate:hibernate-entitymanager:4.3.8.Final"
+	compile "com.fasterxml.jackson.core:jackson-core:2.4.6"
+	compile "com.fasterxml.jackson.core:jackson-databind:2.4.6"
+	compile "com.fasterxml.jackson.core:jackson-annotations:2.4.6"
+	
+	compile ("org.springframework:spring-context:$springVersion")
+	compile ("org.springframework:spring-context-support:$springVersion")
+	compile "org.springframework:spring-aop:$springVersion"
+	compile ("org.springframework:spring-tx:$springVersion")
+	compile ("org.springframework:spring-orm:$springVersion")
+	compile ("org.springframework:spring-jdbc:$springVersion")
+	compile ("org.springframework:spring-web:$springVersion")
+	compile ("org.springframework:spring-messaging:$springVersion")
+	compile "org.aspectj:aspectjweaver:$aspectjVersion"
+	
+	compile "com.thoughtworks.xstream:xstream:1.4.1"
+	
+	compile 'org.slf4j:slf4j-api:1.7.12'
+	
+	//ehcache
+	compile "org.hibernate:hibernate-ehcache:4.3.8.Final"
+}
+
+jar {  
+	baseName = 'shared'
+	version = version
+    manifest {  
+       attributes 'Implementation-Title': '善林金融', 
+	   'Implementation-Module': 'slcf shared', 
+	   'Implementation-Version': version, 
+	   'Build-Time': new Date().format('yyyy-MM-dd HH:mm:ss') 
+    }  
+}
+
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: "http://192.16.150.201:8081/nexus/content/repositories/thirdparty/") {
+            authentication(userName: "admin", password: "admin123")
+            pom.groupId = "com.slfinance.shanlincaifu"
+            pom.artifactId = "shared"
+        }
+    }
+}

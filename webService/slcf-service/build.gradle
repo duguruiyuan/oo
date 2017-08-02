@@ -1,0 +1,54 @@
+description = '善林财富线上service项目'
+
+
+jar {
+	baseName = 'slcf-service'
+	version = version
+	
+	manifest {  
+       attributes 'Implementation-Title': 'shanlinjinrong', 
+	   'Implementation-Module': 'service', 
+	   'Implementation-Version': version, 
+	   'Build-Time': new Date().format('yyyy-MM-dd HH:mm:ss') 
+    }  
+}
+	
+eclipse {
+	classpath {
+		 containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+		 containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7'
+	}
+}
+
+sourceSets {
+	main {
+		resources {
+	        exclude 'email.properties'
+	     }
+	 }
+}
+	
+dependencies {
+	compile project(':slcf-dal')
+	compile ("com.slfinance:thirdPP-client:1.0.6"){
+		exclude module: '*'
+	}
+	compile ("org.springframework.data:spring-data-redis:1.4.2.RELEASE")
+	compile ("org.springframework.amqp:spring-rabbit:1.4.3.RELEASE")
+	
+	//redis辅助jar
+	compile "org.apache.commons:commons-pool2:2.2"
+	compile "redis.clients:jedis:2.5.2"
+
+	compile 'commons-fileupload:commons-fileupload:1.3'
+	
+	//POI
+	compile "org.apache.poi:poi:3.11-beta2"
+	compile "org.apache.poi:poi-ooxml:3.11-beta2"
+	compile "org.apache.poi:poi-scratchpad:3.11-beta2"
+	compile "org.apache.xmlbeans:xmlbeans:2.6.0"
+	
+	//mail
+	compile "javax.mail:mail:1.4.5"
+	
+}
